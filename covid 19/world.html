@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width\, initial-scale = 1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>getting real time report on covid-19</title>
+    <body>
+      <h1>info on covid-19 in the world</h1>
+      <p>CASES:<span id="cas"></span></p><br>
+      <p>RECOVERED:<span id="recov"></span></p><br>
+      <p>DEATHS:<span id="deat"></span></p>
+      <script>
+      const api_url = 'https://corona.lmao.ninja/all';
+      async function getCOVID() {
+        const response = await fetch(api_url);
+        const data = await response.json();
+        const {cases, recovered,deaths} = data;
+        
+        document.getElementById('cas').textContent = cases;
+        document.getElementById('recov').textContent = recovered;
+        document.getElementById('deat').textContent = deaths;
+      }
+        getCOVID();
+      </script>
+    </body>
+  </head>
+</html>
