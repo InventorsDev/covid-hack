@@ -99,4 +99,5 @@ $$('.open-vertical').on('click', function () {
 	  }else{
 	  	app.dialog.alert('You are dong well');
 	  }
+    });
 });
