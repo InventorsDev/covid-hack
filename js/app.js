@@ -87,7 +87,7 @@ $$('.open-vertical').on('click', function () {
   app.dialog.confirm('Are you feeling good today?', function () {
     app.dialog.confirm('Are you free from Headache?', function () {
 	    app.dialog.confirm('Are you normal?', function () {
-		    app.dialog.alert('You are dong well' + name + '!');
+		    app.dialog.alert('You are dong well ' + name + '!');
 	    }); 
 	});
      });
