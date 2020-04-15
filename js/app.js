@@ -98,7 +98,7 @@ $$('.open-vertical').on('click', function () {
 	  	app.dialog.alert('You are dong well');
 	  }else if(yes='no'){
 	  	app.dialog.alert('Something d sup');
-	  }elso{
+	  }else{
 		app.dialog.alert('Error');  
 	  }
     });
