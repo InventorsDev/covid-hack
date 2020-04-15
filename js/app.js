@@ -97,7 +97,7 @@ $$('.open-vertical').on('click', function () {
 	  if(yes='yes'){
 	  	app.dialog.alert('You are dong well');
 	  }else{
-	  	app.dialog.alert('You are dong well');
+	  	app.dialog.alert('Something d sup');
 	  }
     });
 });
