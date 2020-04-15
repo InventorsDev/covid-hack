@@ -94,5 +94,21 @@ $$('.open-vertical').on('click', function () {
       },
     ],
     verticalButtons: true,
+  }, , function () {
+  app.dialog.create({
+    title: 'Vertical Buttons',
+    text: 'Dialog with vertical buttons',
+    buttons: [
+      {
+        text: 'Button 1',
+      },
+      {
+        text: 'Button 2',
+      },
+      {
+        text: 'Button 3',
+      },
+    ],
+    verticalButtons: true,
   }).open();
 });
