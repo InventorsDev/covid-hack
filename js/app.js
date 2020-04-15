@@ -93,11 +93,13 @@ var $$ = Dom7;
 // });
 
 $$('.open-vertical').on('click', function () {
-  app.dialog.prompt('What is your name?', function (yes, no) {
+  app.dialog.prompt('What is your name?', function (yes) {
 	  if(yes='yes'){
 	  	app.dialog.alert('You are dong well');
-	  }else{
+	  }else if(yes='no'){
 	  	app.dialog.alert('Something d sup');
+	  }elso{
+		app.dialog.alert('Error');  
 	  }
     });
 });
