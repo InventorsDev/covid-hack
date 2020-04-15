@@ -87,26 +87,12 @@ $$('.open-vertical').on('click', function () {
     title: 'Are You Normal?',
     buttons: [
       {
-        text: 'Yes',
+        text: 'Yes',function () {
+    app.dialog.alert('Great!');
+  }
       },
       {
         text: 'No',
-      },
-    ],
-    verticalButtons: true,
-  }, function () {
-  app.dialog.create({
-    title: 'Vertical Buttons',
-    text: 'Dialog with vertical buttons',
-    buttons: [
-      {
-        text: 'Button 1',
-      },
-      {
-        text: 'Button 2',
-      },
-      {
-        text: 'Button 3',
       },
     ],
     verticalButtons: true,
