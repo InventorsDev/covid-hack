@@ -10,7 +10,7 @@ var app = new Framework7({
 // Init Swiper
  var swiper = app.swiper.create('.swiper-container', { speed: 400, spaceBetween: 100 });
 
- Main Scripts
+ //Main Scripts
  Get worldwide report function 
   const api_url = 'https://corona.lmao.ninja/all';
        async function getWorldReport() {
