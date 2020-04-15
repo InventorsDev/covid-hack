@@ -81,20 +81,13 @@ var app = new Framework7({
 //trying out the self test
 var $$ = Dom7;
 
-// Vertical Buttons
+
 $$('.open-vertical').on('click', function () {
-  app.dialog.create({
-    title: 'Are You Normal?',
-    buttons: [
-      {
-        text: 'Yes',function () {
-    app.dialog.alert('Great!');
-  }
-      },
-      {
-        text: 'No',
-      },
-    ],
-    verticalButtons: true,
-  }).open();
+  app.dialog.confirm('Are you feeling good today?', function () {
+    app.dialog.confirm('Are you free from Headache?', function () {
+	    app.dialog.confirm('Are you normal?', function () {
+		    app.dialog.alert('You are dong well');
+	    }); 
+			       });
+  });
 });
