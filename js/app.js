@@ -93,9 +93,10 @@ $$('.open-vertical').on('click', function () {
 });
 
 $$('.open-vertical').on('click', function () {
-  app.dialog.prompt('What is your name?', function (name) {
-    app.dialog.confirm('Are you sure that your name is ' + name + '?', function () {
-      app.dialog.alert('Ok, your name is ' + name);
-    });
-  });
+  app.dialog.prompt('What is your name?', function (yes, no) {
+	  if(yes='yes'){
+	  	app.dialog.alert('You are dong well');
+	  }else{
+	  	app.dialog.alert('You are dong well');
+	  }
 });
