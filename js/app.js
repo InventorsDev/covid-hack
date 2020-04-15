@@ -8,7 +8,7 @@ var app = new Framework7({
 				 });
 				 
 // Init Swiper
-// var swiper = app.swiper.create('.swiper-container', { speed: 400, spaceBetween: 100 });
+ var swiper = app.swiper.create('.swiper-container', { speed: 400, spaceBetween: 100 });
 
 // Main Scripts
 // Get worldwide report function 
@@ -83,12 +83,14 @@ var $$ = Dom7;
 
 
 $$('.open-vertical').on('click', function () {
+  app.dialog.prompt('What is your name?', function (name) {
   app.dialog.confirm('Are you feeling good today?', function () {
     app.dialog.confirm('Are you free from Headache?', function () {
 	    app.dialog.confirm('Are you normal?', function () {
-		    app.dialog.alert('You are dong well');
+		    app.dialog.alert('You are dong well' + name + '!');
 	    }); 
 	});
+     });
   });
 });
 
