@@ -8,7 +8,7 @@ var app = new Framework7({
 				 });
 				 
 // Init Swiper
-var swiper = app.swiper.create('.swiper-container', { speed: 400, spaceBetween: 100 });
+// var swiper = app.swiper.create('.swiper-container', { speed: 400, spaceBetween: 100 });
 
 // Main Scripts
 // Get worldwide report function 
