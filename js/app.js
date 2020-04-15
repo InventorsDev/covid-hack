@@ -88,6 +88,14 @@ $$('.open-vertical').on('click', function () {
 	    app.dialog.confirm('Are you normal?', function () {
 		    app.dialog.alert('You are dong well');
 	    }); 
-			       });
+	});
+  });
+});
+
+$$('.open-vertical').on('click', function () {
+  app.dialog.prompt('What is your name?', function (name) {
+    app.dialog.confirm('Are you sure that your name is ' + name + '?', function () {
+      app.dialog.alert('Ok, your name is ' + name);
+    });
   });
 });
