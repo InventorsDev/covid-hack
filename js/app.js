@@ -30,7 +30,9 @@ $$('.open-vertical2').on('click', function () {
     text: 'Dialog with vertical buttons',
     buttons: [
       {
-        text: 'Button 1',
+        text: 'Button 1' : function () {
+	      app.dialog.alert("You are doing well!");
+      },
       },
       {
         text: 'Button 2',
