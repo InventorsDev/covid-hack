@@ -82,6 +82,6 @@ var $$ = Dom7;
 $$('.convert-form-to-data').on('click', function(){
   var formData = app.form.convertToData('#my-form');
   console.log(JSON.stringify(formData));
-  var gender = formData.gender
+  var gender = formData.gender;
   alert(gender);
 });
