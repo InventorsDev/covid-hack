@@ -24,17 +24,6 @@ $$('.open-vertical').on('click', function () {
   });
 });
 
-// $$('.open-vertical').on('click', function () {
-//   app.dialog.prompt('What is your name?', function (yes) {
-// 	  if(yes='yes'){
-// 	  	app.dialog.alert('You are dong well');
-// 	  }else if(yes='no'){
-// 	  	app.dialog.alert('Something d sup');
-// 	  }
-//     });
-// });
-	//}());
-
 $$('.open-vertical2').on('click', function () {
   app.dialog.create({
     title: 'Vertical Buttons',
