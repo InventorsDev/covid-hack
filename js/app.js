@@ -33,7 +33,7 @@ $$('.open-vertical').on('click', function () {
 // 	  }
 //     });
 // });
-	}());
+	//}());
 
 $$('.open-vertical2').on('click', function () {
   app.dialog.create({
