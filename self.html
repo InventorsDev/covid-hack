@@ -12,6 +12,9 @@
     <title>SELF TEST</title>
     <!-- Path to Framework7 Library Bundle CSS -->
     <link rel="stylesheet" href="css/framework7.bundle.min.css">
+    <link rel="stylesheet" href="css/framework7.bundle.css">
+    <link rel="stylesheet" href="css/framework7.min.css">
+    <link rel="stylesheet" href="css/framework7.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/app.css">
 </head>
@@ -42,11 +45,11 @@
           </div>
 
           <!-- Scrollable page content -->
-          <div class="page-content">
+          <div class="page-content ">
 
-            <div class="page-content">
+            <div class="page-content theme-dark">
 
-      <div class="block-title">To Proceed, Click on the button below</div>
+      <!-- <div class="block-title">To Proceed, Click on the button below</div>
       <div class="block block-strong">
         <p class="theme-dark">
           <button class="button open-vertical">Click Me</button>
@@ -56,7 +59,35 @@
           <button class="button open-vertical2">Click Me</button>
         </p>
         
+      </div> -->
+
+      <div class="card">
+        <div class="card-header">Any symptom of Malaria</div>
+          <div class="card-content card-content-padding">
+              <br><br>
+              <form class="list" id="my-form">
+                <ul>
+                    <div class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-input-wrap">
+                          <input type="radio"  name="gender" value="yes">
+                        <label for="yes">Yes</label><br>
+                        <input type="radio"  name="gender" value="no">
+                        <label for="no">No</label><br>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </form>
+              <br><br>
+              <div class="block block-strong row">
+                <button class="col button button-large button-raised button-fill convert-form-to-data">Proceed</button>
+              </div>
+          </div>
       </div>
+
+      
       
     </div>
 
