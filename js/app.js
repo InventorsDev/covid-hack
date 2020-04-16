@@ -33,7 +33,7 @@ $$('.open-vertical2').on('click', function () {
         text: 'Button 1', 
       },
       {
-        text: 'Button 2' . on('click', functiion() {
+        text: 'Button 2' . on('click', function () {
 		app.dialog.alert("You are dong well");
 			      }),
       },
