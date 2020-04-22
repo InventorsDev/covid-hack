@@ -1,7 +1,7 @@
 var app = new Framework7({ 
 		// App root element
 		root: '#app', // App Name 
-		name: 'Covid Report', // App id 
+		name: 'My App', // App id 
 		id: 'com.myapp.test', // Enable swipe panel 
 		panel: { swipe: 'left', }, // Add default routes 
 		routes: [ { path: '/about/', url: 'about.html', }, ], // ... other parameters 
@@ -29,7 +29,7 @@ async function getWorldReport() {
 // Detect user state and show report based on the location
 function getStateReport(){
 
-	app.dialog.preloader("Getting Latest Reports 🔆");				
+	app.dialog.preloader("Getting Latest Reports");				
 	var url = "http://ip-api.com/json";
 	var result = fetch(url)
 	
@@ -43,9 +43,8 @@ function getStateReport(){
     	// Converts Country Code To The Country Flag Emoji 🚩
     	var countryFlag = countryCode.toUpperCase().replace(/./g, char => String.fromCodePoint(char.charCodeAt(0)+127397) );
     	document.getElementById("country"). innerHTML = "Cases In " + country + " " + countryFlag;
- 		/*grab data from second api to get covid results
- 		app.dialog.preloader("Generating Reports ⚕️")
-		*/
+ 		// grab data from second api to get covid results
+ 		// app.dialog.preloader("Generating Reports ⚕️")
     	return fetch('https://corona.lmao.ninja/v2/countries/' + country);
 	})
 	.then(function(response) {
@@ -73,7 +72,7 @@ function getStateReport(){
 	});
 }
 
-	
+// Self test script
 var $$ = Dom7;
 
 $$('.convert-form-to-data').on('click', function(){
