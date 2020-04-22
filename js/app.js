@@ -12,7 +12,7 @@ var swiper = app.swiper.create('.swiper-container', { speed: 400, spaceBetween: 
 
 
 // Get worldwide report function
-const api_url = 'https://corona.lmao.ninja/all';
+const api_url = 'https://corona.lmao.ninja/v2/all';
 async function getWorldReport() {
 	const response = await fetch(api_url);
 	const data = await response.json();
@@ -43,9 +43,10 @@ function getStateReport(){
     	// Converts Country Code To The Country Flag Emoji 🚩
     	var countryFlag = countryCode.toUpperCase().replace(/./g, char => String.fromCodePoint(char.charCodeAt(0)+127397) );
     	document.getElementById("country"). innerHTML = "Cases In " + country + " " + countryFlag;
- 		// grab data from second api to get covid results
+ 		/*grab data from second api to get covid results
  		app.dialog.preloader("Generating Reports ⚕️")
-    	return fetch('https://corona.lmao.ninja/countries/' + country);
+		*/
+    	return fetch('https://corona.lmao.ninja/v2/countries/' + country);
 	})
 	.then(function(response) {
 		return response.json();
