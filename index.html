@@ -76,6 +76,15 @@
     <script type="text/javascript" src="js/framework7.bundle.min.js"></script>
     <!-- Path to your app js-->
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript">
+    	app.dialog.progress();
+    	setTimeout(function () {
+    		getStateReport();
+    		getWorldReport();
+    		app.dialog.close();
+    		
+    	}, 2000);
+    </script>
 </body>
 
 </html>
