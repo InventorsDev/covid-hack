@@ -29,7 +29,7 @@ async function getWorldReport() {
 // Detect user state and show report based on the location
 function getStateReport(){
 
-	app.dialog.preloader("Getting Latest Reports");				
+	app.dialog.preloader("Loading Latest Reports");				
 	var url = "http://ip-api.com/json";
 	var result = fetch(url)
 	.then(function(response){
