@@ -61,31 +61,37 @@
         
       </div> -->
 
-      <div class="card">
-        <div class="card-header">Any symptom of Malaria</div>
-          <div class="card-content card-content-padding">
-              <br><br>
-              <form class="list" id="my-form">
-                <ul>
-                    <div class="item-content item-input">
-                      <div class="item-inner">
-                        <div class="item-input-wrap">
-                          <input type="radio"  name="gender" value="yes">
-                        <label for="yes">Yes</label><br>
-                        <input type="radio"  name="gender" value="no">
-                        <label for="no">No</label><br>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </form>
-              <br><br>
-              <div class="block block-strong row">
-                <button class="col button button-large button-raised button-fill convert-form-to-data">Proceed</button>
+      <div id="question-container" class="card hide" id="operation1">
+        <div id="question" class="card-header">Any symptom of Malaria?</div>
+              
+              <div id="answer-buttons" class="block block-strong row">
+                <button class="col button button-large button-raised button-fill convert-form-to-data">yes</button><br><br><br>
+                <button class="col button button-large button-raised button-fill convert-form-to-data">No</button>
               </div>
           </div>
+
+          <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
+          </div>
       </div>
+
+
+      <!-- <div class="container">
+        <div id="question-container" class="hide">
+          <div id="question">Question</div>
+          <div id="answer-buttons" class="btn-grid">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
+          </div>
+        </div>
+        <div class="controls">
+          <button id="start-btn" class="start-btn btn">Start</button>
+          <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
+      </div> -->
 
       
       
