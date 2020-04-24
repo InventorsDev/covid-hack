@@ -79,141 +79,86 @@ function getStateReport(){
 // Self test script
 var $$ = Dom7;
 
+var app = new Framework7({ 
+				// App root element
+				 root: '#app', // App Name 
+				 name: 'My App', // App id 
+				 id: 'com.myapp.test', // Enable swipe panel 
+				 panel: { swipe: 'left', }, // Add default routes 
+				 routes: [ { path: '/about/', url: 'about.html', }, ], // ... other parameters 
+				 });
+				 
+
+	
+	var $$ = Dom7;
 
 
+
+document.getElementById("show2").style.display = "none";
+document.getElementById("show3").style.display = "none";
+document.getElementById("finalButton").style.display = "none";
 
 $$('.convert-form-to-data').on('click', function(){
   var formData = app.form.convertToData('#my-form');
-  console.log(JSON.stringify(formData));
-  var gender = formData.gender
-  alert(gender);
+  var answer1 = formData.name;
+
+  window.localStorage.setItem('ans1', answer1);
+  //console.log(answer1);
+ 
+  document.getElementById("show1").style.display = "none";
+
+  alert(JSON.stringify(formData));
+
+  document.getElementById("show2").style.display = "block";
+
+  $$('.convert-form-to-data2').on('click', function(){
+    var formData = app.form.convertToData('#my-form');
+    var answer2 = formData.name;
+
+    window.localStorage.setItem('ans2', answer2);
+
+    document.getElementById("show1").style.display = "none";
+    document.getElementById("show2").style.display = "none";
+
+    alert(JSON.stringify(formData));
+
+    document.getElementById("show3").style.display = "block";
+
+    $$('.convert-form-to-data3').on('click', function(){
+      var formData = app.form.convertToData('#my-form');
+      var answer3 = formData.name;
+
+      window.localStorage.setItem('ans3', answer3);
+
+      document.getElementById("show1").style.display = "none";
+      document.getElementById("show2").style.display = "none";
+      document.getElementById("show3").style.display = "none";
+
+      alert(JSON.stringify(formData));
+
+      document.getElementById("finalButton").style.display = "block";
+
+
+  });
+
+  });
+
+  
+
 });
+var ans1 = window.localStorage.getItem('ans1');
+var ans2 = window.localStorage.getItem('ans2');
+var ans3 = window.localStorage.getItem('ans3');
+
+if (ans1,ans2,ans3 == "yes") {
+  alert("You are doing well!");
+}else{
+  alert("You need to see the Doctor");
+}
 
 
 	
 
-const startButton = document.getElementById('start-btn')
-const nextButton = document.getElementById('next-btn')
-const questionContainerElement = document.getElementById('question-container')
-const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-buttons')
 
-let shuffledQuestions, currentQuestionIndex
 
-startButton.addEventListener('click', startGame)
-nextButton.addEventListener('click', () => {
-	currentQuestionIndex++
-	setNextQuestion()
-})
 
-function startGame() {
-	startButton.classList.add('hide')
-	shuffledQuestions = questions
-	currentQuestionIndex = 0
-	questionContainerElement.classList.remove('hide')
-	setNextQuestion()
-}
-
-function setNextQuestion() {
-	resetState()
-	showQuestion(shuffledQuestions[currentQuestionIndex])
-}
-
-function showQuestion(question) {
-	questionElement.innerText = question.question
-	question.answers.forEach(answer => {
-		const button = document.createElement('button')
-		button.innerText = answer.text
-		button.classList.add('btn')
-		if (answer.correct) {
-			button.dataset.correct = answer.correct
-		}
-		button.addEventListener('click', selectAnswer)
-		answerButtonsElement.appendChild(button)
-	})
-}
-
-function resetState() {
-	clearStatusClass(document.body)
-	nextButton.classList.add('hide')
-	while (answerButtonsElement.firstChild) {
-		answerButtonsElement.removeChild(answerButtonsElement.firstChild)
-	}
-}
-
-function selectAnswer(e) {
-	const selectedButton = e.target
-	const correct = selectedButton.dataset.correct
-	setStatusClass(document.body, correct)
-	Array.from(answerButtonsElement.children).forEach(button => {
-		setStatusClass(button, button.dataset.correct)
-	})
-	if (shuffledQuestions.length > currentQuestionIndex + 1) {
-		nextButton.classList.remove('hide')
-	} else {
-    checkAnswer();
-  //   alert("You are Doing Well!");
-		startButton.innerText = 'Restart Self Test'
-		startButton.classList.remove('hide')
-
-	}
-}
-
-function checkAnswer(){
-  let question1 = questions[0].answers;
-  console.log(question1);
-  alert("This thing is not doing Well");
-}
-
-function setStatusClass(element, correct) {
-	clearStatusClass(element)
-	if (correct) {
-		element.classList.add('correct')
-	} else {
-		element.classList.add('wrong')
-	}
-}
-
-function clearStatusClass(element) {
-	element.classList.remove('correct')
-	element.classList.remove('wrong')
-}
-
-const questions = [
-	{
-    id:1,
-		question: 'Do you have malaria?',
-		answers: [
-			{ text: 'Yes', correct: true },
-			{ text: 'No', wrong: false }
-		]
-	},
-	{
-    id:2,
-		question: 'Do you have Typhoid?',
-		answers: [
-			{ text: 'Yes', correct: true },
-			{ text: 'No', correct: false }
-		]
-	},
-	{
-		question: 'Do you have High-Blood Pressure?',
-		answers: [
-			{ text: 'Yes', correct: true },
-			{ text: 'No', correct: false }
-		]
-	},
-	{
-		question: 'Do you have problem?',
-		answers: [
-			{ text: 'Yes', correct: true },
-			{ text: 'No', correct: false }
-		]
-	}
-]
-
-console.log(questions[0].question);
-// function checkAnswer(){
-//   let question1 = questions[0].answers;
-//   console.log(questions[0]);
-// }
