@@ -1,4 +1,4 @@
- var app = new Framework7({ 
+   var app = new Framework7({ 
 		// App root element
 		root: '#app', // App Name 
 		name: 'My App', // App id 
@@ -9,6 +9,7 @@
 				 
 // Init Swiper
 var swiper = app.swiper.create('.swiper-container', { speed: 400, spaceBetween: 100 });
+
 
 // Get worldwide report function
 const api_url = 'https://corona.lmao.ninja/v2/all';
@@ -28,8 +29,8 @@ async function getWorldReport() {
 // Detect user state and show report based on the location
 function getStateReport(){
 
-	app.dialog.preloader("Detecting Location");			
-	var url = "http://ip-api.com/json";
+	app.dialog.preloader("Detecting Location 🎈");			
+	var url = "https://ipinfo.io/json";
 	var result = fetch(url)
 	
 	.then(function(response){
@@ -38,9 +39,9 @@ function getStateReport(){
 	.then(function(data) {
 		// close loading dialog
 		app.dialog.close();
-		var state = data.regionName;
+		var state = data.city;
     	var country = data.country;
-    	var countryCode = data.countryCode;
+    	var countryCode = data.country;
     	// Converts Country Code To The Country Flag Emoji 🚩
     	var countryFlag = countryCode.toUpperCase().replace(/./g, char => String.fromCodePoint(char.charCodeAt(0)+127397) );
     	document.getElementById("country").textContent = "Cases In " + country + " " + countryFlag;
