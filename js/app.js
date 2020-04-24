@@ -32,17 +32,16 @@ function getStateReport(){
 	app.dialog.preloader("Getting Latest Reports");				
 	var url = "http://ip-api.com/json";
 	var result = fetch(url)
-	
 	.then(function(response){
 		 return response.json();
   	 })
 	.then(function(data) {
 		var state = data.regionName;
-    	var country = data.country;
-    	var countryCode = data.countryCode;
-    	// Converts Country Code To The Country Flag Emoji 🚩
-    	var countryFlag = countryCode.toUpperCase().replace(/./g, char => String.fromCodePoint(char.charCodeAt(0)+127397) );
-    	document.getElementById("country"). innerHTML = "Cases In " + country + " " + countryFlag;
+    		var country = data.country;
+    		var countryCode = data.countryCode;
+    		// Converts Country Code To The Country Flag Emoji 🚩
+    		var countryFlag = countryCode.toUpperCase().replace(/./g, char => String.fromCodePoint(char.charCodeAt(0)+127397) );
+    		document.getElementById("country").innerHTML = "Cases In " + country + " " + countryFlag;
  		// grab data from second api to get covid results
  		// app.dialog.preloader("Generating Reports ⚕️")
     	return fetch('https://corona.lmao.ninja/v2/countries/' + country);
