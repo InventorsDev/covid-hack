@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="css/framework7.bundle.min.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/app.css">
+    <!-- Chart.js file -->
+    <script src="chartjs/Chart.js"></script>
+    <script src="chart/js/Chart.bundle.js"></script>
+    <link rel="chart/css/chart.css">
 </head>
 
 <body>
@@ -66,6 +70,10 @@
                             </div>
                         </div>
                     </div>
+                    <div class="block-title block-title-large" >Chart</div>
+                    <div class="block" >
+                    	<canvas id="myChart" width="400" height="400"></canvas>
+                    </div>
                     <!-- Link to another page -->
 
                 </div>
@@ -85,6 +93,51 @@
     		app.dialog.close();
     		
     	}, 2000);
+    	
+    </script>
+    <script>
+    	var ctx = document.getElementById('myChart').getContext('2d');
+    	fetch('https://corona.lmao.ninja/v2/all')
+    	.then((data) => data.json())
+    	.then((res) => {
+    		var recovered = res.recovered;
+    		var cases = res.cases;
+    		var death = res.deaths;
+    		var todayCase = res.todayCases;
+    		//chart start
+    		var myChart = new Chart(ctx, {
+    			type: 'bar',
+    			data: {
+    			labels: ['Total Cases', 'Deaths', 'Recovered', 'Cases Today'],
+    			datasets: [{
+    			label: 'Current',
+    			data: [cases, death, recovered, todayCase],
+    			backgroundColor: [
+    				'rgba(255, 99, 132, 0.2)',
+    				'rgba(255, 206, 86, 0.2)',
+    				'rgba(54, 162, 235, 0.2)',
+    			],
+    			borderColor: [
+    				'rgba(255, 99, 132, 1)',
+    				'rgba(255, 206, 86, 1)',
+    				'rgba(54, 162, 235, 1)',
+    			],
+    			borderWidth: 1
+    			}]
+    		},
+    		options: {
+    		scales: {
+    			yAxes: [{
+    			ticks: {
+    				beginAtZero: false
+    				}
+    			}]
+    		}
+    	}
+    });
+    //chart end
+    // console.log(JSON.stringify(res))
+    })
     </script>
 </body>
 </html>
