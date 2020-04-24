@@ -1,4 +1,4 @@
-var app = new Framework7({ 
+ var app = new Framework7({ 
 		// App root element
 		root: '#app', // App Name 
 		name: 'My App', // App id 
@@ -9,7 +9,6 @@ var app = new Framework7({
 				 
 // Init Swiper
 var swiper = app.swiper.create('.swiper-container', { speed: 400, spaceBetween: 100 });
-
 
 // Get worldwide report function
 const api_url = 'https://corona.lmao.ninja/v2/all';
@@ -29,7 +28,7 @@ async function getWorldReport() {
 // Detect user state and show report based on the location
 function getStateReport(){
 
-	app.dialog.preloader("Detecting Current Location");			
+	app.dialog.preloader("Detecting Location");			
 	var url = "http://ip-api.com/json";
 	var result = fetch(url)
 	
@@ -37,6 +36,8 @@ function getStateReport(){
 		 return response.json();
   	 })
 	.then(function(data) {
+		// close loading dialog
+		app.dialog.close();
 		var state = data.regionName;
     	var country = data.country;
     	var countryCode = data.countryCode;
@@ -52,7 +53,7 @@ function getStateReport(){
 		return response.json();
 	})
 	.catch(function(error) {
-		app.dialog.alert('Request failed');
+		app.dialog.alert('Request failed ' + error);
 	})
 	result.then(function(r){
 		 console.log(JSON.stringify(r));
