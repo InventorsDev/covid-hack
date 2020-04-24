@@ -92,7 +92,7 @@ $$('.convert-form-to-data').on('click', function(){
  
   document.getElementById("show1").style.display = "none";
 
-  alert(JSON.stringify(formData));
+  //alert(JSON.stringify(formData));
 
   document.getElementById("show2").style.display = "block";
 
@@ -105,7 +105,7 @@ $$('.convert-form-to-data').on('click', function(){
     document.getElementById("show1").style.display = "none";
     document.getElementById("show2").style.display = "none";
 
-    alert(JSON.stringify(formData));
+   //alert(JSON.stringify(formData));
 
     document.getElementById("show3").style.display = "block";
 
@@ -119,7 +119,7 @@ $$('.convert-form-to-data').on('click', function(){
       document.getElementById("show2").style.display = "none";
       document.getElementById("show3").style.display = "none";
 
-      alert(JSON.stringify(formData));
+      //alert(JSON.stringify(formData));
 
       document.getElementById("finalButton").style.display = "block";
 
@@ -135,11 +135,13 @@ var ans1 = window.localStorage.getItem('ans1');
 var ans2 = window.localStorage.getItem('ans2');
 var ans3 = window.localStorage.getItem('ans3');
 
+
 if (ans1,ans2,ans3 == "yes") {
   alert("You are doing well!");
 }else{
   alert("You need to see the Doctor");
 }
+
 
 
 	
