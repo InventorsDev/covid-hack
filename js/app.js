@@ -106,13 +106,13 @@ var pos = 0, test, test_status, question, choice, choices, chA, chB, correct = 0
       if (pos >= questions.length) {
         
         if (yes == 12) {
-          alert("Please visit any Testing Center for Proper Testing and Properly Quarantine Or isolate from people.");
+          app.dialog.alert("Please visit any Testing Center for Proper Testing and Properly Quarantine Or isolate from people.");
         }else{
           if (no == 12) {
-            alert("You are Okay, Just visit the Pharmacist for Medical Counsel");
+            app.dialog.alert("You are Okay, Just visit the Pharmacist for Medical Counsel");
           }else{
             if (yes <= 11) {
-              alert("Please visit an health Practictional for Medial check up and Feel free to go for Covid-19 Test");
+              app.dialog.alert("Please visit an health Practictional for Medial check up and Feel free to go for Covid-19 Test");
             }
           }
         }
