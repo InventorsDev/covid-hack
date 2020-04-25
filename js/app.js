@@ -79,68 +79,88 @@ function getStateReport(){
 // Self test script
 var $$ = Dom7;
 
-document.getElementById("show2").style.display = "none";
-document.getElementById("show3").style.display = "none";
-document.getElementById("finalButton").style.display = "none";
+var pos = 0, test, test_status, question, choice, choices, chA, chB, correct = 0, yes = 0, no = 0;
+    //multidimentional array
+    var questions = [
+      [ "Do you have cough ?", "Yes", "No", "A", "B" ],
+      [ "Do you have cold ?", "Yes", "No", "A", "B" ],
+      [ "Do you have Diarrhea ?", "Yes", "No", "A", "B" ],
+      [ "Do you have Sore Throat ?", "Yes", "No", "A", "B" ],
+      [ "Do you have body aches ?", "Yes", "No", "A", "B" ],
+      [ "Do you have Headache ?", "Yes", "No", "A", "B" ],
+      [ "Do you have Fever(37.8C and above) ?", "Yes", "No", "A", "B" ],
+      [ "Are you having difficulty breathing ?", "Yes", "No", "A", "B" ],
+      [ "Are you experiencing fatigue ?", "Yes", "No", "A", "B" ],
+      [ "Have you travelled in the past 1 month ?", "Yes", "No", "A", "B" ],
+      [ "Do you have a travel history to a Covid-19 infected area ?", "Yes", "No", "A", "B" ],
+      [ "Have you had direct contact with or are you taking care of a positive Covid-19 patient ?", "Yes", "No", "A", "B" ]
+    ];
 
-$$('.convert-form-to-data').on('click', function(){
-  var formData = app.form.convertToData('#my-form');
-  var answer1 = formData.name;
+    function _(x){
+      return document.getElementById(x);
+    }
 
-  window.localStorage.setItem('ans1', answer1);
-  //console.log(answer1);
- 
-  document.getElementById("show1").style.display = "none";
+    function renderQuestion () {
+      test = _("test");
 
-  //alert(JSON.stringify(formData));
+      if (pos >= questions.length) {
+        
+        if (yes == 12) {
+          alert("Please visit any Testing Center for Proper Testing and Properly Quarantine Or isolate from people.");
+        }else{
+          if (no == 12) {
+            alert("You are Okay, Just visit the Pharmacist for Medical Counsel");
+          }else{
+            if (yes <= 11) {
+              alert("Please visit an health Practictional for Medial check up and Feel free to go for Covid-19 Test");
+            }
+          }
+        }
 
-  document.getElementById("show2").style.display = "block";
+        //test.innerHTML = "<h2> You got "+yes+" of "+questions.length+" questions correct and"+no+"</h2>";
+        test.innerHTML = "<button class='col button button-large button-fill' onclick='location.reload()'>Repeat</button>";
+        _("test_status").innerHTML = "Test Completed";
+        pos = 0
+        yes = 0;
+        no = 0;
+        return false;
+      }
 
-  $$('.convert-form-to-data2').on('click', function(){
-    var formData = app.form.convertToData('#my-form');
-    var answer2 = formData.name;
+      _("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
+      question = questions[pos] [0];
+      chA = questions[pos] [1];
+      chB = questions[pos] [2];
 
-    window.localStorage.setItem('ans2', answer2);
+      test.innerHTML = "<h3>"+question+"</h3>";
+      test.innerHTML += "<input type='radio' name='choices' value='A'>"+chA+"<br>";
+      test.innerHTML += "<input type='radio' name='choices' value='B'>"+chB+"<br><br>";
+      test.innerHTML += "<button class='col button button-large button-fill' onclick='checkAnswer()'>Submit Answer</button>";
 
-    document.getElementById("show1").style.display = "none";
-    document.getElementById("show2").style.display = "none";
+    }
 
-   //alert(JSON.stringify(formData));
+    function checkAnswer(){
+      choices = document.getElementsByName("choices");
+      for (var i = 0; i < choices.length; i++) {
+        if (choices[i].checked) {
+          choice = choices[i].value;
+        }
+      }
 
-    document.getElementById("show3").style.display = "block";
+      if (choice == questions[pos][3]) {
+        yes++;
+      }else{
+        if (choice == questions[pos][4]) {
+          no++;
+        }
+      }
+      pos++;
+      renderQuestion();
+    }
 
-    $$('.convert-form-to-data3').on('click', function(){
-      var formData = app.form.convertToData('#my-form');
-      var answer3 = formData.name;
+    
 
-      window.localStorage.setItem('ans3', answer3);
+    window.addEventListener("load", renderQuestion, false);
 
-      document.getElementById("show1").style.display = "none";
-      document.getElementById("show2").style.display = "none";
-      document.getElementById("show3").style.display = "none";
-
-      //alert(JSON.stringify(formData));
-
-      document.getElementById("finalButton").style.display = "block";
-
-
-  });
-
-  });
-
-  
-
-});
-var ans1 = window.localStorage.getItem('ans1');
-var ans2 = window.localStorage.getItem('ans2');
-var ans3 = window.localStorage.getItem('ans3');
-
-
-if (ans1,ans2,ans3 == "yes") {
-  alert("You are doing well!");
-}else{
-  alert("You need to see the Doctor");
-}
 
 
 
