@@ -132,8 +132,38 @@ var pos = 0, test, test_status, question, choice, choices, chA, chB, correct = 0
       chB = questions[pos] [2];
 
       test.innerHTML = "<h3>"+question+"</h3>";
-      test.innerHTML += "<input type='radio' name='choices' value='A'>"+chA+"<br>";
-      test.innerHTML += "<input type='radio' name='choices' value='B'>"+chB+"<br><br>";
+      test.innerHTML += 
+      `
+      <div class="list">
+      <ul>
+    <li>
+      <label class="item-radio item-radio-icon-start item-content">
+        <input type="radio" name="choices" value="A"  />
+        <i class="icon icon-radio"></i>
+        <div class="item-inner">
+          <div class="item-title">${chA}</div>
+        </div>
+      </label>
+    </li>
+  </ul>
+</div>
+      `;
+      test.innerHTML += 
+       `
+      <div class="list">
+      <ul>
+    <li>
+      <label class="item-radio item-radio-icon-start item-content">
+        <input type="radio" name="choices" value="B"  />
+        <i class="icon icon-radio"></i>
+        <div class="item-inner">
+          <div class="item-title">${chB}</div>
+        </div>
+      </label>
+    </li>
+  </ul>
+</div><br>
+      `;
       test.innerHTML += "<button class='col button button-large button-fill' onclick='checkAnswer()'>Submit Answer</button>";
 
     }
@@ -160,7 +190,6 @@ var pos = 0, test, test_status, question, choice, choices, chA, chB, correct = 0
     
 
     window.addEventListener("load", renderQuestion, false);
-
 
 
 
