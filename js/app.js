@@ -138,7 +138,7 @@ var pos = 0, test, test_status, question, choice, choices, chA, chB, correct = 0
       <ul>
     <li>
       <label class="item-radio item-radio-icon-start item-content">
-        <input type="radio" name="choices" value="A"  />
+        <input type="radio" name="choices" value="A" checked  />
         <i class="icon icon-radio"></i>
         <div class="item-inner">
           <div class="item-title">${chA}</div>
