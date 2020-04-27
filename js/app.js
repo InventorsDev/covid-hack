@@ -197,4 +197,3 @@ var pos = 0, test, test_status, question, choice, choices, chA, chB, correct = 0
 
 
 
-
