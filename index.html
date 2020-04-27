@@ -33,98 +33,97 @@
                     </div>
                 </div>
                 <!-- Bottom Toolbar -->
-<!--                 <div class="toolbar toolbar-bottom">
+                <!--                 <div class="toolbar toolbar-bottom">
                     <div class="toolbar-inner"> <a class="link">Link 1</a> <a class="link">Link 2</a> <a class="link">Link 3</a> </div>
                 </div> -->
                 <!-- Scrollable page content -->
                 <div class="page-content">
-                    
+
                     <div class="page">
-                          <div class="navbar">
+                        <div class="navbar">
                             <div class="navbar-bg"></div>
                             <div class="navbar-inner sliding">
-                              <div class="left">
-                                  <a href="#" class="link back">
-                                    <i class="icon icon-back"></i>
-                                    <span class="if-not-md">Back</span>
-                                  </a>
+                                <div class="left">
+                                    <a href="#" class="link back">
+                                        <i class="icon icon-back"></i>
+                                        <span class="if-not-md">Back</span>
+                                    </a>
                                 </div>
-                              <div class="title">Static Tabs</div>
-                            </div>
-                          </div>
-                          <div class="toolbar tabbar toolbar-bottom">
-                            <div class="toolbar-inner">
-                              <a href="#tab-1" class="tab-link tab-link-active">REPORT</a>
-                              <a href="#tab-2" class="tab-link"></a>
-                              <a href="#tab-3" class="tab-link">SELF TEST</a>
-                            </div>
-                          </div>
-                          <div class="tabs">
-                            <div id="tab-1" class="page-content tab tab-active">
-                              <div class="block">
-                                  
-                                  <!--<p>Page content goes here</p> -->
-                    <br>
-                    <div data-pagination='{"el": ".swiper-pagination"}' data-space-between="50" class="swiper-container swiper-init demo-swiper">
-                        <div class="swiper-pagination"></div>
-                        <div class="swiper-wrapper">
-
-                            <div class="swiper-slide">
-                                <div class="card bg-color-orange text-color-white">
-                                    <div class="card-header" id="country">Your Country</div>
-                                    <div class="card-content card-content-padding">
-                                        <div id="country-report"> Total Case - <b>0</b>
-                                            <br> Total Death - <b>0</b>
-                                            <br> Recovered - <b>0</b>
-                                            <hr> Case Today - <b>0</b>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card bg-color-red text-color-white">
-                                    <div class="card-header">Cases Worldwide 🌍</div>
-                                    <div class="card-content card-content-padding">
-                                        <div id="global-report"> Total Case - <b>0</b>
-                                            <br> Total Death - <b>0</b>
-                                            <br> Recovered - <b>0</b>
-                                            <hr> Case Today - <b>0</b>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="title">Static Tabs</div>
                             </div>
                         </div>
-                    </div>
-                    <div class="block-title block-title-large" >Chart</div>
-                    <div class="block" >
-                    	<canvas id="myChart" width="400" height="400"></canvas>
-                    </div>
-                                  
-                              </div>
+                        <div class="toolbar tabbar toolbar-bottom">
+                            <div class="toolbar-inner">
+                                <a href="#tab-1" class="tab-link tab-link-active">REPORT</a>
+                                <a href="#tab-2" class="tab-link"></a>
+                                <a href="#tab-3" class="tab-link">SELF TEST</a>
                             </div>
-<!--                             <div id="tab-2" class="page-content tab">
+                        </div>
+                        <div class="tabs">
+                            <div id="tab-1" class="page-content tab tab-active">
+                                <div class="block">
+
+                                    <!--<p>Page content goes here</p> -->
+                                    <br>
+                                    <div data-pagination='{"el": ".swiper-pagination"}' data-space-between="50" class="swiper-container swiper-init demo-swiper">
+                                        <div class="swiper-pagination"></div>
+                                        <div class="swiper-wrapper">
+
+                                            <div class="swiper-slide">
+                                                <div class="card bg-color-orange text-color-white">
+                                                    <div class="card-header" id="country">Your Country</div>
+                                                    <div class="card-content card-content-padding">
+                                                        <div id="country-report"> Total Case - <b>0</b>
+                                                            <br> Total Death - <b>0</b>
+                                                            <br> Recovered - <b>0</b>
+                                                            <hr> Case Today - <b>0</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="card bg-color-red text-color-white">
+                                                    <div class="card-header">Cases Worldwide 🌍</div>
+                                                    <div class="card-content card-content-padding">
+                                                        <div id="global-report"> Total Case - <b>0</b>
+                                                            <br> Total Death - <b>0</b>
+                                                            <br> Recovered - <b>0</b>
+                                                            <hr> Case Today - <b>0</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="block-title block-title-large">Chart</div>
+                                    <div class="block">
+                                        <canvas id="myChart" width="400" height="400"></canvas>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--                             <div id="tab-2" class="page-content tab">
                               <div class="block">
-                           
-                                  
+
                               </div>
                             </div> -->
                             <div id="tab-3" class="page-content tab">
-                              <div class="block">
+                                <div class="block">
 
-                                     <br><br>
+                                    <br>
+                                    <br>
 
+                                    <div class="card">
+                                        <div id="test_status" class="card-header"></div>
+                                        <div id="test" class="card-content card-content-padding"></div>
+                                        <div class="card-footer">Endeavor to Answer this questions sincerly...</div>
+                                    </div>
 
-                                <div class="card">
-                                  <div id="test_status" class="card-header"></div>
-                                  <div id="test" class="card-content card-content-padding"></div>
-                                  <div class="card-footer">Endeavor to Answer this questions sincerly...</div>
                                 </div>
-
-                              </div>
                             </div>
-                          </div>
                         </div>
-                    
+                    </div>
+
                     <!-- Link to another page -->
 
                 </div>
@@ -136,59 +135,59 @@
     <!-- Path to your app js-->
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript">
-    	app.dialog.progress();
-    	setTimeout(function () {
-            
-    		getWorldReport();
+        app.dialog.progress();
+        setTimeout(function() {
+
+            getWorldReport();
             getStateReport();
-    		app.dialog.close();
-    		
-    	}, 2000);
-    	
+            app.dialog.close();
+
+        }, 2000);
     </script>
     <script>
-    	var ctx = document.getElementById('myChart').getContext('2d');
-    	fetch('https://corona.lmao.ninja/v2/all')
-    	.then((data) => data.json())
-    	.then((res) => {
-    		var recovered = res.recovered;
-    		var cases = res.cases;
-    		var death = res.deaths;
-    		var todayCase = res.todayCases;
-    		//chart start
-    		var myChart = new Chart(ctx, {
-    			type: 'bar',
-    			data: {
-    			labels: ['Total Cases', 'Deaths', 'Recovered', 'Cases Today'],
-    			datasets: [{
-    			label: 'Current',
-    			data: [cases, death, recovered, todayCase],
-    			backgroundColor: [
-    				'rgba(255, 99, 132, 0.2)',
-    				'rgba(255, 206, 86, 0.2)',
-    				'rgba(54, 162, 235, 0.2)',
-    			],
-    			borderColor: [
-    				'rgba(255, 99, 132, 1)',
-    				'rgba(255, 206, 86, 1)',
-    				'rgba(54, 162, 235, 1)',
-    			],
-    			borderWidth: 1
-    			}]
-    		},
-    		options: {
-    		scales: {
-    			yAxes: [{
-    			ticks: {
-    				beginAtZero: false
-    				}
-    			}]
-    		}
-    	}
-    });
-    //chart end
-    // console.log(JSON.stringify(res))
-    })
+        var ctx = document.getElementById('myChart').getContext('2d');
+        fetch('https://corona.lmao.ninja/v2/all')
+            .then((data) => data.json())
+            .then((res) => {
+                var recovered = res.recovered;
+                var cases = res.cases;
+                var death = res.deaths;
+                var todayCase = res.todayCases;
+                //chart start
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Total Cases', 'Deaths', 'Recovered', 'Cases Today'],
+                        datasets: [{
+                            label: 'Current',
+                            data: [cases, death, recovered, todayCase],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(54, 162, 235, 1)',
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: false
+                                }
+                            }]
+                        }
+                    }
+                });
+                //chart end
+                // console.log(JSON.stringify(res))
+            })
     </script>
 </body>
+
 </html>
