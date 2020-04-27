@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/framework7.bundle.min.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="f7-icon/css/framework7-icons.css">
     <!-- Chart.js file -->
     <script src="chartjs/Chart.js"></script>
     <script src="chart/js/Chart.bundle.js"></script>
@@ -30,25 +31,30 @@
                     <div class="navbar-bg"></div>
                     <div class="navbar-inner">
                         <div class="title">Covid Reports 🧙</div>
+                        <div class="right" >
+                        	<i class="f7-icons icon color-theme-red" onclick="toggleDarkMode()">moon</i>
+                        </div>
                     </div>
                 </div>
-                <div class="toolbar tabbar toolbar-bottom">
+                <div class="toolbar tabbar tabbar-labels toolbar-bottom">
                 	<div class="toolbar-inner">
-                		<a href="#tab-1" class="tab-link tab-link-active">REPORT</a>
-                		<a href="#tab-2" class="tab-link">Self Test</a>
+                		<a href="#tab-1" class="tab-link tab-link-active">
+                			<i class="icon f7-icons">chart_bar</i>
+                			<span class="tabbar-label" >Reports</span>
+                		</a>
+                		<a href="#tab-2" class="tab-link">
+                			<i class="icon f7-icons">drop</i>
+                			<span class="tabbar-label" >Self Test</span>
+                		</a>
                 	</div>
                 </div>
-                <!-- Bottom Toolbar -->
-                <!--                 <div class="toolbar toolbar-bottom">
-                    <div class="toolbar-inner"> <a class="link">Link 1</a> <a class="link">Link 2</a> <a class="link">Link 3</a> </div>
-                </div> -->
                 <!-- Scrollable page content -->
                 <div class="page-content">
                     <div class="page">
 
                         <div class="tabs">
                             <div id="tab-1" class="page-content tab tab-active">
-                                <div class="block">
+                                <div class="block no-padding">
                                     <div data-pagination='{"el": ".swiper-pagination"}' data-space-between="50" class="swiper-container swiper-init demo-swiper">
                                         <div class="swiper-pagination"></div>
                                         <div class="swiper-wrapper">
@@ -161,7 +167,12 @@
                 });
                 //chart end
                 // console.log(JSON.stringify(res))
-            })
+            });
+            
+            // toggle dark mode
+        function toggleDarkMode(){
+            document.querySelector("body").classList.toggle("theme-dark");
+         }
     </script>
 </body>
 
