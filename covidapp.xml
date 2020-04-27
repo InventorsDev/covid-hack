@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.phonegap.example"
+    versionCode = "10"
+    version     = "1.0.0" >
+
+<!-- versionCode is optional and Android only -->
+
+  <name>Covid-19 App</name>
+
+  <description>
+      Covid-19 App to perform self test and get real time support on Covid-19
+  </description>
+
+  <author href="https://build.phonegap.com" email="https://github.com/InventorsDev">
+      Undefined
+  </author>
+
+    <platform name="ios" />
+    <platform name="android" />
+    <platform name="winphone" />
+
+</widget>
