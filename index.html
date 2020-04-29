@@ -16,6 +16,13 @@
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="f7-icon/css/framework7-icons.css">
+    <!-- -->
+    <link rel="manifest" href="manifest.json" />
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="img/128.png" />
+    <link rel="apple-touch-icon" href="img/512.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+    <meta name="theme-color" content="#db4938" />
     <!-- Chart.js file -->
     <script src="chartjs/Chart.js"></script>
     <script src="chart/js/Chart.bundle.js"></script>
@@ -144,6 +151,16 @@
     <script type="text/javascript" src="js/app.js"></script>
     
     <script type="text/javascript">
+    	// service worker
+    	if ("serviceWorker" in navigator) {
+    		window.addEventListener("load", function() {
+    			navigator.serviceWorker
+    			.register("/serviceWorker.js")
+    			.then(res => console.log("service worker registered"))
+    			.catch(err => console.log("service worker not registered", err));
+    		});
+    	}
+    	// sw ends
        function sendNoToDb() {
        		var number = document.getElementById("m-number").value;
        		if(number == ""){

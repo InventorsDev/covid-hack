@@ -1,0 +1,21 @@
+{
+  "name": "Covid-19 Report",
+  "short_name": "Covid-19 Report",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#fdfdfd",
+  "theme_color": "#db4938",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/img/128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/img/512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
