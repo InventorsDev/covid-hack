@@ -149,12 +149,18 @@
        		if(number == ""){
        			app.dialog.alert("Cmon, thats not a number 😏", "Error");
        		}else{
-       			fetch("url")
-       			.then((res) => res)
+       			app.dialog.preloader();
+       			fetch(`http://insaer.org/covid/submit.php?phone_no=${number}`)
+       			.then((res) => res.text())
        			.then((data) => {
+       				console.log(JSON.stringify(data));
        				if(data == "success"){
-       					app.dialog.alert("Mobile number added");
+       					// set viewed popup to true in local storage
+       					localStorage.viewedPopup = "true";
+       					app.dialog.close();
+       					app.dialog.alert("Mobile number added, You'll now receive daily reports 🎉", "Success");
        				}else{
+       					app.dialog.close();
        					app.dialog.alert("Server Error, Try Again", "Error");
        				}
        			})
@@ -171,7 +177,10 @@
             app.dialog.close();
             // Show popup after 4sec
             setTimeout(() => {
-            	app.popup.open('.popup-enterNumber', true);
+            	// show only if user have not viewed it
+            	if(localStorage.viewedPopup != "true"){
+            		app.popup.open('.popup-enterNumber', true);
+            	}
             }, 4000);
 
         }, 2000);
