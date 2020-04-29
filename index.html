@@ -167,7 +167,7 @@
        			app.dialog.alert("Cmon, thats not a number 😏", "Error");
        		}else{
        			app.dialog.preloader();
-       			fetch(`http://insaer.org/covid/submit.php?phone_no=${number}`)
+       			fetch(`https://insaer.org/covid/submit.php?phone_no=${number}`)
        			.then((res) => res.text())
        			.then((data) => {
        				console.log(JSON.stringify(data));
@@ -182,6 +182,7 @@
        				}
        			})
        			.catch((err) => {
+       				app.dialog.close();
        				app.dialog.alert("Fetch Error, Contact Admin", "Error");
        			})
        		}
