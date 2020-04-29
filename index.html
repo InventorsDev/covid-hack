@@ -111,19 +111,68 @@
             </div>
         </div>
     </div>
+    <!-- ....Popup -->
+    
+    <div class="popup popup-enterNumber">
+    	<div class="block">
+    		<p>
+    			<!-- Close Popup -->
+    			<a class="link popup-close" href="#">
+    				<i class="icon f7-icons">multiply_circle</i>
+    			</a>
+    		</p>
+    		<div style="margin-top: 20px;font-weight: lighter;">
+    			<center>
+    				<i class="f7-icons color-deeporange" style="font-size: 50px" >envelope_open</i>
+    			</center>
+    			<h2 style="font-weight: normal;">Get Daily Report</h2>
+    			<p>Add your mobile number to receive daily report</p>
+    			<div class="item-input-wrap">
+    				<input type="number" name="name" id="m-number"  placeholder="Enter Mobile Number" >
+    				<hr>
+    			</div>
+    			<br>
+    			<button class="col button button-fill color-deeporange" onclick="sendNoToDb()">Submit</button>
+    		</div>
+    	</div>
+    </div>
+    <!-- ....Popup end -->
+    
     <!-- Path to Framework7 Library Bundle JS-->
     <script type="text/javascript" src="js/framework7.bundle.min.js"></script>
     <!-- Path to your app js-->
     <script type="text/javascript" src="js/app.js"></script>
     
     <script type="text/javascript">
-       
+       function sendNoToDb() {
+       		var number = document.getElementById("m-number").value;
+       		if(number == ""){
+       			app.dialog.alert("Cmon, thats not a number 😏", "Error");
+       		}else{
+       			fetch("url")
+       			.then((res) => res)
+       			.then((data) => {
+       				if(data == "success"){
+       					app.dialog.alert("Mobile number added");
+       				}else{
+       					app.dialog.alert("Server Error, Try Again", "Error");
+       				}
+       			})
+       			.catch((err) => {
+       				app.dialog.alert("Fetch Error, Contact Admin", "Error");
+       			})
+       		}
+       }
         app.dialog.progress();
         setTimeout(function() {
 
             getWorldReport();
             getStateReport();
             app.dialog.close();
+            // Show popup after 4sec
+            setTimeout(() => {
+            	app.popup.open('.popup-enterNumber', true);
+            }, 4000);
 
         }, 2000);
         
