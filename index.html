@@ -115,7 +115,14 @@
     <script type="text/javascript" src="js/framework7.bundle.min.js"></script>
     <!-- Path to your app js-->
     <script type="text/javascript" src="js/app.js"></script>
+    
     <script type="text/javascript">
+        // Prompt Dialog for users to input Phone Numbers
+app.dialog.prompt('Enter your Phone Number?', function (number) {
+    app.dialog.confirm('Are you sure that your Phone Number is ' + number + '?', function () {
+      app.dialog.alert('You would recieve daily alerts from us on the latest Covid-19 Report.');
+    });
+  });
         app.dialog.progress();
         setTimeout(function() {
 
@@ -124,7 +131,6 @@
             app.dialog.close();
 
         }, 2000);
-        app.dialog.close();
         
     </script>
     <script>
