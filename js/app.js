@@ -79,8 +79,18 @@ function getStateReport(){
 // Self test script
 var $$ = Dom7;
 
+// Prompt Dialog for users to input Phone Numbers
+app.dialog.prompt('Enter your Phone Number?', function (number) {
+    app.dialog.confirm('Are you sure that your Phone Number is ' + number + '?', function () {
+      app.dialog.alert('You would recieve daily alerts from us on the latest Covid-19 Report.');
+    });
+  });
+
+
+//Declaring all variables
 var pos = 0, test, test_status, question, choice, choices, chA, chB, correct = 0, yes = 0, no = 0;
-    //multidimentional array
+
+//multidimentional array
     var questions = [
       [ "Do you have cough ?", "Yes", "No", "A", "B" ],
       [ "Do you have cold ?", "Yes", "No", "A", "B" ],
@@ -100,6 +110,7 @@ var pos = 0, test, test_status, question, choice, choices, chA, chB, correct = 0
       return document.getElementById(x);
     }
 
+//Function to Render Questions 
     function renderQuestion () {
       test = _("test");
 
@@ -117,7 +128,7 @@ var pos = 0, test, test_status, question, choice, choices, chA, chB, correct = 0
           }
         }
 
-        //test.innerHTML = "<h2> You got "+yes+" of "+questions.length+" questions correct and"+no+"</h2>";
+        //Display this when it finishes looping through the questions array
         test.innerHTML = "<button class='col button button-large button-fill' onclick='location.reload()'>Repeat</button>";
         _("test_status").innerHTML = "Test Completed";
         pos = 0
@@ -125,7 +136,8 @@ var pos = 0, test, test_status, question, choice, choices, chA, chB, correct = 0
         no = 0;
         return false;
       }
-
+	
+    //Markup to display questions
       _("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
       question = questions[pos] [0];
       chA = questions[pos] [1];
@@ -167,7 +179,7 @@ var pos = 0, test, test_status, question, choice, choices, chA, chB, correct = 0
       test.innerHTML += "<button class='col button button-large button-fill' onclick='checkAnswer()'>Submit Answer</button>";
 
     }
-
+//Function that checkes question and answers to determine the self test report
     function checkAnswer(){
       choices = document.getElementsByName("choices");
       for (var i = 0; i < choices.length; i++) {
