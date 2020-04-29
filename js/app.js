@@ -79,13 +79,6 @@ function getStateReport(){
 // Self test script
 var $$ = Dom7;
 
-// Prompt Dialog for users to input Phone Numbers
-app.dialog.prompt('Enter your Phone Number?', function (number) {
-    app.dialog.confirm('Are you sure that your Phone Number is ' + number + '?', function () {
-      app.dialog.alert('You would recieve daily alerts from us on the latest Covid-19 Report.');
-    });
-  });
-
 
 //Declaring all variables
 var pos = 0, test, test_status, question, choice, choices, chA, chB, correct = 0, yes = 0, no = 0;
