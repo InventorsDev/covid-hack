@@ -1,1 +1,3 @@
 ## Here are some rules you have to follow before contributing to Covid-hack
+
+...
