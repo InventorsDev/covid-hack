@@ -11,7 +11,7 @@ You'll only need to access the  web app once [here](https://inventorsdev.github.
 And that's it, you'll be updated with covid report everyday.
 (This process is automated using Cron job).
 <br>
-Optionally, visiting the web app will help you get reported cases in your country + global cases only, so as not to bore you with big statistics data's.
+> Optionally, visiting the web app will automatically detect your location and help you get reported cases in your country + global cases only, so as not to bore you with big statistics data's.
 <br>
 The app also supports performing self test right on your device
 
@@ -21,31 +21,10 @@ The app also supports performing self test right on your device
 - Get only reports that concerns you.
 - Perform self test right in your mobile phone
 - Easily accessible user interface.
+- Dark Mode
 
 ## How to use it
 Simply visit https://inventorsdev.github.io/covid-hack
-
-## Set up
-
-### Requirements
-
-- PHP
-- SQL Database
-- A Twilio account - [sign up](https://www.twilio.com/try-twilio)
-
-### Local development
-
-After the above requirements have been met:
-
-1. Clone this repository and `cd` into it
-
-```bash
-git clone git@github.com:inventorsdev/covid-hack.git
-cd covid-hack
-```
-2. Fix Twilio credentials in `sender.php`
-3. Import `Db.sql` on your MySQL Database 
-3. Run the `index.html` file on localhost
 
 ## Technologies Used
 - HTML
@@ -55,7 +34,10 @@ cd covid-hack
 - PHP - For Backend Services
 
 ## Screenshots
-
+### Live Reports
+![Landing page](https://raw.githubusercontent.com/InventorsDev/covid-hack/master/screenshots/1.png)
+## Get Update & Self Test Page
+![Self Test And Get Update page](https://raw.githubusercontent.com/InventorsDev/covid-hack/master/screenshots/2.png)
 ## Contributing
 
 This project is open source and welcomes contributions. All contributions are subject to our [Code of Conduct](https://github.com/inventorsdev/covid-hack/blob/master/CONTRIBUTING.md).
