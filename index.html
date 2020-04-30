@@ -92,7 +92,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="block-title block-title-large">Chart</div>
+                                    <div class="block-title block-title-large">Global Chart 🌍</div>
                                     <div class="block">
                                         <canvas id="myChart" width="400" height="400"></canvas>
                                     </div>
@@ -133,7 +133,7 @@
     				<i class="f7-icons color-deeporange" style="font-size: 50px" >envelope_open</i>
     			</center>
     			<h2 style="font-weight: normal;">Get Daily Report</h2>
-    			<p>Add your mobile number to receive daily report</p>
+    			<p>Add your mobile number to receive daily report via SMS</p>
     			<div class="item-input-wrap">
     				<input type="number" name="name" id="m-number"  placeholder="Enter Mobile Number" >
     				<hr>
@@ -167,7 +167,7 @@
        			app.dialog.alert("Cmon, thats not a number 😏", "Error");
        		}else{
        			app.dialog.preloader();
-       			fetch(`https://insaer.org/covid/submit.php?phone_no=${number}`)
+       			fetch('https://insaer.org/covid/submit.php?phone_no=' + number)
        			.then((res) => res.text())
        			.then((data) => {
        				console.log(JSON.stringify(data));
@@ -183,7 +183,7 @@
        			})
        			.catch((err) => {
        				app.dialog.close();
-       				app.dialog.alert("Fetch Error, Contact Admin", "Error");
+       				app.dialog.alert("Fetch Error, " + err, "Error");
        			})
        		}
        }
@@ -198,15 +198,13 @@
             	// show only if user have not viewed it
             	if(localStorage.viewedPopup != "true"){
             		app.popup.open('.popup-enterNumber', true);
+            	}else{
+            		console.log("Viewed popup already");
             	}
-            }, 4000);
+            }, 5000);
 
         }, 2000);
         
-    </script>
-    <script>
-     // Prompt Dialog for users to input Phone Numbers
- 	
     </script>
     <script>
         var ctx = document.getElementById('myChart').getContext('2d');
@@ -219,7 +217,7 @@
                 var todayCase = res.todayCases;
                 //chart start
                 var myChart = new Chart(ctx, {
-                    type: 'bar',
+                    type: 'pie',
                     data: {
                         labels: ['Total Cases', 'Deaths', 'Recovered', 'Cases Today'],
                         datasets: [{

@@ -68,7 +68,7 @@ function getStateReport(){
     		 Total Case - <b>${totCase}</b>
              <br> Total Death - <b>${totDeath}</b>
              <br> Recovered - <b>${recov}</b>
-             <hr> Case Today - <b>${todCase}</b>
+             <hr> Case Today - <b>${todCase}</b> <span style="margin-left: 120px"><i class="f7-icons small">arrow_right</i></span>
     		`;
     	document.querySelector("#country-report").innerHTML = countryTemp;
     	// close loading dialog
@@ -199,5 +199,4 @@ var pos = 0, test, test_status, question, choice, choices, chA, chB, correct = 0
 
 
 	
-
 
