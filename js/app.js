@@ -47,7 +47,7 @@ function getStateReport(){
     	document.getElementById("country").textContent = "Cases In " + country + " " + countryFlag;
  		// grab data from second api to get covid results
  		// app.dialog.preloader("Generating Reports ⚕️")
- 		console.log('Country :' + country);
+ 		// console.log('Country :' + country);
     	return fetch('https://corona.lmao.ninja/v2/countries/' + country);
 	})
 	.then(function(response) {
@@ -57,7 +57,7 @@ function getStateReport(){
 		app.dialog.alert('Request failed ' + error);
 	})
 	result.then(function(r){
-		 console.log(JSON.stringify(r));
+		 // console.log(JSON.stringify(r));
 		 app.dialog.preloader("Getting Latest Reports");
 		 var totCase = r.cases;
     	 var totDeath = r.deaths;
@@ -199,6 +199,5 @@ var pos = 0, test, test_status, question, choice, choices, chA, chB, correct = 0
 
 
 	
-
 
 
