@@ -167,10 +167,9 @@
        			app.dialog.alert("Cmon, thats not a number 😏", "Error");
        		}else{
        			app.dialog.preloader();
-       			fetch('https://insaer.org/covid/submit.php?phone_no=' + number)
-       			.then((res) => res.text())
-       			.then((data) => {
-       				console.log(JSON.stringify(data));
+       			app.request.get('https://insaer.org/covid/submit.php?phone_no=' + number, function (data) {
+       				// app.dialog.close();
+       				// console.log(data);
        				if(data == "success"){
        					// set viewed popup to true in local storage
        					localStorage.viewedPopup = "true";
@@ -180,11 +179,7 @@
        					app.dialog.close();
        					app.dialog.alert("Server Error, Try Again", "Error");
        				}
-       			})
-       			.catch((err) => {
-       				app.dialog.close();
-       				app.dialog.alert("Fetch Error, " + err, "Error");
-       			})
+       			});
        		}
        }
         app.dialog.progress();
