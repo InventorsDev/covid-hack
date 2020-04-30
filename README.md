@@ -1,8 +1,9 @@
-# Covid-19 Reports
-
+# `COVID-19 REPORT 🌍`
+<br>
 ## About
 
 Globally, you'll need an internet connection to get latest report about the covid-19 pandemic, hence countries with no steady access to Internet connection has no means of getting steady updates.
+<br>
 We are breaching this gap integrating Twilio API to help people get latest info needed about the pandemic without having to be online.
 
 ### How it works
@@ -10,7 +11,7 @@ You'll only need to access the  web app once [here](https://inventorsdev.github.
 And that's it, you'll be updated with covid report everyday.
 (This process is automated using Cron job).
 <br>
-Optionally, visiting the web app will help you get reported cases in your country + global cases only. So as not to bore you with big statistics data's.
+Optionally, visiting the web app will help you get reported cases in your country + global cases only, so as not to bore you with big statistics data's.
 <br>
 The app also supports performing self test right on your device
 
@@ -29,6 +30,7 @@ Simply visit https://inventorsdev.github.io/covid-hack
 ### Requirements
 
 - PHP
+- SQL Database
 - A Twilio account - [sign up](https://www.twilio.com/try-twilio)
 
 ### Twilio Account Settings
@@ -49,14 +51,16 @@ After the above requirements have been met:
 git clone git@github.com:inventorsdev/covid-hack.git
 cd covid-hack
 ```
-2. Run the `index.html` file
+2. Fix Twilio credentials in `sender.php`
+3. Import `Db.sql` on your MySQL Database 
+3. Run the `index.html` file on localhost
 
 ## Technologies Used
 - HTML
 - CSS
 - JAVASCRIPT
 - [Framework 7](http://framework7.io)
-- PHP - For Backend services
+- PHP - For Backend Services
 
 ## Screenshots
 
