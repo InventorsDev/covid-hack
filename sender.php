@@ -4,6 +4,21 @@ require 'app.php';
 $data = new App();
 $result = $data->fetch_nos();
 
+$fetch = file_get_contents("https://corona.lmao.ninja/v2/all");
+$response = json_decode($fetch, true);
+
+$totalCase = $response["cases"];
+$totalDeath = $response["deaths"];
+// ---
+$todayCase = $response["todayCases"];
+$todayDeath = $response["todayDeaths"];
+$recovered = $response["recovered"];
+$composedMessage = "Today Case: $todayCase \n 
+					Today Deaths: $todayDeath \n
+					------ \n
+					Total Cases: $totalCase \n
+					Total Deaths: $totalDeath \n
+					Total Recovered: $recovered";
 
 
 require __DIR__ . '/vendor/autoload.php';
@@ -31,9 +46,7 @@ $message = $client->messages->create(
     $row['phone_no'],
     array(
         'from' => $twilio_number,
-        'body' => `
-        	<h1>This is the message to be sent</h1>
-        `
+        'body' => $composedMessage
     )
 );
 
@@ -49,7 +62,7 @@ $message = $client->messages->create(
  ?>
 
 <!-- this is the form i created to test it out, just ignore -->
-
+<!-- why should we ignore 😏 -->
 <form method="post">	
 
 no: <br>	
