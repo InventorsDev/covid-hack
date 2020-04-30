@@ -1,5 +1,5 @@
 # `COVID-19 REPORT 🌍`
-<br>
+
 ## About
 
 Globally, you'll need an internet connection to get latest report about the covid-19 pandemic, hence countries with no steady access to Internet connection has no means of getting steady updates.
